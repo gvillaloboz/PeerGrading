@@ -1,0 +1,110 @@
+mat-grid-tile {
+  background: #e6f2ff;
+}
+
+#wrapper{
+	margin-right: auto;
+	margin-left: auto;
+	with: auto;
+	height: auto;
+}
+
+#header{
+	with: 100%;
+	height: 100px;
+	/*background: green;*/
+}
+
+.headerContent{
+    float: left;
+    margin:  0 auto;
+}
+
+#scores{
+	with: 100%;
+	height: 150px;
+	/*background: red;*/
+}
+
+.leftSideBox{
+	float: left;
+	margin:  0 auto;
+	padding-left: 20px;
+}
+
+.rightSideBox{
+	float: right;
+	margin:  0 auto;
+	padding-right: 20px;
+}
+
+.rightSideBoxHidden{
+	float: right;
+	margin:  0 auto;
+	padding-right: 20px;
+	display: none;
+}
+
+#votingTable{
+	with: 100%;
+	margin: auto;
+	margin-right: 60px;
+	/*background: blue;*/
+}
+
+
+h1 {
+  font-size: 24px;
+  color: #1BBBFB;
+}
+
+.message {
+	color: red;
+}
+
+#message {
+	color: red;
+}
+
+:host /deep/ .mat-radio-container {
+  width: 28px;
+}
+
+:host /deep/.mat-radio-label {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.radio-label-above::ng-deep.mat-radio-label{ flex-direction: column-reverse; }
+
+/*body{
+	font-family: 'Roboto', sans-serif;
+}*/
+
+/*#header{
+	background: green;
+	position: relative;
+}
+
+#sub-header h1{
+	text-align: center;
+}
+
+#sub-header{
+	background: purple;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+
+.voting-table{
+	position: absolute;
+}
+
+#voting{
+	background: red;
+	position: relative;
+}*/

@@ -1,0 +1,201 @@
+	<style> .mat-radio-container {
+  			width: 38px;}
+  	</style>
+
+  	<div id="wrapper">
+	  	
+	  	<div id="header">
+	  		 <div class="leftSideBox">
+	        	<!-- <h1>Peer Grading Evaluation</h1> -->
+	        	<h1>IxD 2018 Grades</h1>
+	    	</div>
+	    	<div class="rightSideBox">
+	    		<h2>{{user?.firstName}} {{user?.lastName}}</h2>
+	    	</div>
+	  	</div>
+
+	  	<div id="scores">
+	  		<!-- <h3>Average Scores</h3> -->
+	  		<div class="leftSideBox">
+				<!-- <label>Commitment: {{commitmentGrade}}</label><br>
+				<label>Impact: {{impactGrade}}</label><br>
+				<label>Citizenship: {{citizenshipGrade}} </label><br>
+				<label>Votes: {{missingVoters}} / {{totalVoters}} </label><br>
+				<br><label class="message">{{message}} </label><br><br> -->
+				<label>Active Participation: {{activeParticipation}} (max. 0.3)</label><br>
+				<label>Peer Evaluation: {{peerEvaluation}} (max 0.54)</label><br>
+				<label>Peer Grading: {{peerGrading}} (max. 0.54) </label><br>
+				<label>Instructor: {{instructor}} (max. 1.62) </label><br>
+	  		</div>
+
+	  		<div class="rightSideBoxHidden">
+	  			<label>Active Participation: {{activeParticipation}} (max. 0.3)</label><br>
+				<label>Peer Evaluation: {{peerEvaluation}} (max 0.54)</label><br>
+				<label>Peer Grading: {{peerGrading}} (max. 0.54) </label><br>
+				<label>Instructor: {{instructor}} (max. 1.62) </label><br>
+	  		</div>
+	  	</div>
+	
+	
+<div id="" *ngIf=canVote>
+	
+<mat-tab-group>
+
+<mat-tab label="Commitment">
+  <p>Personal availability and engagement with team work</p>
+   <mat-grid-list cols="3" rowHeight="10:1">
+   			<mat-grid-tile>
+		
+			</mat-grid-tile>
+			<mat-grid-tile>
+			<small><strong>1</strong>: Unacceptable <strong>2</strong>: Insufficient <strong>3</strong>: On the edge <strong>4</strong>: Sufficient <strong>5</strong>: Good <strong>6</strong>: Excellent</small>
+			</mat-grid-tile>
+			<mat-grid-tile>
+			</mat-grid-tile>
+
+   </mat-grid-list>
+  <mat-grid-list cols="3" rowHeight="5:1"  *ngFor="let student of teamMembers; let i = index">
+
+		<mat-grid-tile>
+			{{student.firstName}} {{student.lastName}}
+		</mat-grid-tile>
+		
+		<mat-grid-tile>
+			
+			<mat-radio-group name="grading{{student.id}}-commitmentGrade" [(ngModel)]="student.commitmentGrade">
+				<small>1</small>
+				<mat-radio-button name="grading{{i}}" [value]="1"></mat-radio-button>
+				<small>2</small>
+				<mat-radio-button name="grading{{i}}" [value]="2"></mat-radio-button>
+				<small>3</small>
+				<mat-radio-button name="grading{{i}}" [value]="3"></mat-radio-button>
+				<small>4</small>
+				<mat-radio-button name="grading{{i}}" [value]="4"></mat-radio-button>
+				<small>4.5</small>
+				<mat-radio-button name="grading{{i}}" [value]="4.5"></mat-radio-button>
+				<small>5</small>
+				<mat-radio-button name="grading{{i}}" [value]="5"></mat-radio-button>
+				<small>5.5</small>
+				<mat-radio-button name="grading{{i}}" [value]="5.5"></mat-radio-button>
+				<small>6</small>
+				<mat-radio-button name="grading{{i}}" [value]="6"></mat-radio-button>
+			</mat-radio-group>
+		</mat-grid-tile>
+ 
+		<mat-grid-tile>
+				<mat-form-field>
+					<input matInput placeholder="Reason" [(ngModel)]="student.commitmentReason">
+				</mat-form-field>
+		</mat-grid-tile>
+
+</mat-grid-list>
+</mat-tab>
+
+<mat-tab label="Impact">
+	<p>How much the peer contributed towards the goals of the project</p>
+
+	<mat-grid-list cols="3" rowHeight="10:1">
+   			<mat-grid-tile>
+		
+			</mat-grid-tile>
+			<mat-grid-tile>
+			<small><strong>1</strong>: Unacceptable <strong>2</strong>: Insufficient <strong>3</strong>: On the edge <strong>4</strong>: Sufficient <strong>5</strong>: Good <strong>6</strong>: Excellent</small>
+			</mat-grid-tile>
+			<mat-grid-tile>
+			</mat-grid-tile>
+
+   </mat-grid-list>
+
+	<mat-grid-list cols="3" rowHeight="5:1"  *ngFor="let student of teamMembers; let i = index">
+		<mat-grid-tile>
+			{{student.firstName}} {{student.lastName}}
+		</mat-grid-tile>
+		
+		<mat-grid-tile>
+			<mat-radio-group name="grading{{student.id}}-impactGrade" [(ngModel)]="student.impactGrade">
+				<small>1</small>
+				<mat-radio-button name="grading{{i}}" [value]="1"></mat-radio-button>
+				<small>2</small>
+				<mat-radio-button name="grading{{i}}" [value]="2"></mat-radio-button>
+				<small>3</small>
+				<mat-radio-button name="grading{{i}}" [value]="3"></mat-radio-button>
+				<small>4</small>
+				<mat-radio-button name="grading{{i}}" [value]="4"></mat-radio-button>
+				<small>4.5</small>
+				<mat-radio-button name="grading{{i}}" [value]="4.5"></mat-radio-button>
+				<small>5</small>
+				<mat-radio-button name="grading{{i}}" [value]="5"></mat-radio-button>
+				<small>5.5</small>
+				<mat-radio-button name="grading{{i}}" [value]="5.5"></mat-radio-button>
+				<small>6</small>
+				<mat-radio-button name="grading{{i}}" [value]="6"></mat-radio-button>
+			</mat-radio-group>
+		</mat-grid-tile>
+
+		<mat-grid-tile>
+			<mat-form-field>
+				<input matInput placeholder="Reason" [(ngModel)]="student.impactReason">
+			</mat-form-field>
+		</mat-grid-tile>
+
+</mat-grid-list>
+</mat-tab>
+
+<mat-tab label="Citizenship">
+	<p>How much the peer went above and beyond his/her personal responsabilities to help other peers.</p>
+	
+<mat-grid-list cols="3" rowHeight="10:1">
+   			<mat-grid-tile>
+		
+			</mat-grid-tile>
+			<mat-grid-tile>
+			<small><strong>1</strong>: Unacceptable <strong>2</strong>: Insufficient <strong>3</strong>: On the edge <strong>4</strong>: Sufficient <strong>5</strong>: Good <strong>6</strong>: Excellent</small>
+			</mat-grid-tile>
+			<mat-grid-tile>
+			</mat-grid-tile>
+
+   </mat-grid-list>
+
+	<mat-grid-list cols="3" rowHeight="5:1"  *ngFor="let student of teamMembers; let i = index">
+		<mat-grid-tile>
+			{{student.firstName}} {{student.lastName}}</mat-grid-tile>
+		<mat-grid-tile>
+
+			<mat-radio-group name="grading{{student.id}}-citizenship" [(ngModel)]="student.citizenshipGrade">
+				<small>1</small>
+				<mat-radio-button name="grading{{i}}" [value]="1"></mat-radio-button>
+				<small>2</small>
+				<mat-radio-button name="grading{{i}}" [value]="2"></mat-radio-button>
+				<small>3</small>
+				<mat-radio-button name="grading{{i}}" [value]="3"></mat-radio-button>
+				<small>4</small>
+				<mat-radio-button name="grading{{i}}" [value]="4"></mat-radio-button>
+				<small>4.5</small>
+				<mat-radio-button name="grading{{i}}" [value]="4.5"></mat-radio-button>
+				<small>5</small>
+				<mat-radio-button name="grading{{i}}" [value]="5"></mat-radio-button>
+				<small>5.5</small>
+				<mat-radio-button name="grading{{i}}" [value]="5.5"></mat-radio-button>
+				<small>6</small>
+				<mat-radio-button name="grading{{i}}" [value]="6"></mat-radio-button>
+			</mat-radio-group>
+		</mat-grid-tile>
+
+		<mat-grid-tile>
+				<mat-form-field>
+					<input matInput placeholder="Reason" [(ngModel)]="student.citizenshipReason">
+				</mat-form-field>
+		</mat-grid-tile>
+</mat-grid-list>
+</mat-tab>
+
+</mat-tab-group>
+
+</div>
+
+
+<div class="leftSideBox">
+	<button mat-raised-button mat-button *ngIf=canVote (click)="onSubmit()">Submit</button>
+</div>
+
+</div> <!--wrapper -->	
